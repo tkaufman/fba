@@ -2,5 +2,5 @@ package com.pillar.fba
 
 class MarginTargetController {
 
-    def index = { }
+    def scaffold = { }
 }
