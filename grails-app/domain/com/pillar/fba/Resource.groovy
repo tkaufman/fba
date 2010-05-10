@@ -5,7 +5,7 @@ class Resource {
   String name
   Date startDate
   Date endDate
-  double loadedCost
+  double loadedHourlyCost
 
     static constraints = {
     }
