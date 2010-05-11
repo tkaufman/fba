@@ -9,4 +9,5 @@ class Client {
 		name()
 		abbr(unique:true)
     }
+  
 }
