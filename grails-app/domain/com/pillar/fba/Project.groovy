@@ -7,8 +7,8 @@ class Project {
     String name
     String description
 
-	static hasMany = [resources:ProjectResource]
+	static hasMany = [resources:ProjectResource,resourcePlaceHolders:ProjectResourcePlaceholder]
 
-    static constraints = {
+   static constraints = {
     }
 }
