@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 2010-05-10 20:04:57,096 [main] ERROR StackTrace  - Sanitizing stacktrace:
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is org.codehaus.groovy.runtime.InvokerInvocationException: groovy.lang.MissingPropertyException: No such property: unique for class: com.pillar.fba.Client
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
@@ -5088,16 +5089,74 @@ groovy.lang.MissingPropertyException: No such property: unique for class: com.pi
 	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:282)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+=======
+2010-05-10 19:01:23,664 [main] ERROR StackTrace  - Sanitizing stacktrace:
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed, /Users/rich/Documents/projects/FreeBeerApp/grails-app/domain/com/pillar/fba/Project.groovy: 4: unexpected token: Client @ line 4, column 5.
+       Client client belongsTo
+       ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:353)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:94)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:61)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:249)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:163)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:820)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:513)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:489)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:466)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:450)
+	at org.codehaus.groovy.tools.FileSystemCompiler.compile(FileSystemCompiler.java:57)
+	at org.codehaus.groovy.tools.FileSystemCompiler.doCompilation(FileSystemCompiler.java:170)
+	at org.codehaus.groovy.ant.Groovyc.compile(Groovyc.java:816)
+	at org.codehaus.groovy.grails.compiler.GrailsCompiler.super$5$compile(GrailsCompiler.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:86)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:234)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1049)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:923)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:127)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuper0(ScriptBytecodeAdapter.java:147)
+	at org.codehaus.groovy.grails.compiler.GrailsCompiler.compile(GrailsCompiler.groovy:97)
+	at org.codehaus.groovy.ant.Groovyc.execute(Groovyc.java:544)
+	at sun.reflect.GeneratedMethodAccessor263.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at groovy.util.AntBuilder.nodeCompleted(AntBuilder.java:212)
+	at groovy.util.BuilderSupport.doInvokeMethod(BuilderSupport.java:147)
+	at groovy.util.AntBuilder.doInvokeMethod(AntBuilder.java:162)
+	at groovy.util.BuilderSupport.invokeMethod(BuilderSupport.java:64)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:129)
+	at _GrailsPackage_groovy$_run_closure8.doCall(_GrailsPackage_groovy:275)
+	at sun.reflect.GeneratedMethodAccessor266.invoke(Unknown Source)
+>>>>>>> Stashed changes
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
 	at java.lang.reflect.Method.invoke(Method.java:597)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:266)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+<<<<<<< Updated upstream
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:56)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:155)
 	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+=======
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:155)
+	at _GrailsPackage_groovy$_run_closure8.call(_GrailsPackage_groovy)
+	at sun.reflect.GeneratedMethodAccessor265.invoke(Unknown Source)
+>>>>>>> Stashed changes
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
 	at java.lang.reflect.Method.invoke(Method.java:597)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:86)
@@ -5116,6 +5175,7 @@ groovy.lang.MissingPropertyException: No such property: unique for class: com.pi
 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1011)
 	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:923)
 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:880)
+<<<<<<< Updated upstream
 	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
@@ -5169,6 +5229,13 @@ groovy.lang.MissingPropertyException: No such property: unique for class: com.pi
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:163)
 	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+=======
+	at groovy.lang.DelegatingMetaClass.invokeMethod(DelegatingMetaClass.java:149)
+	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:127)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:155)
+	at _GrailsRun_groovy$_run_closure8.doCall(_GrailsRun_groovy:242)
+>>>>>>> Stashed changes
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -5280,7 +5347,11 @@ groovy.lang.MissingPropertyException: No such property: unique for class: com.pi
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:147)
+<<<<<<< Updated upstream
 	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+=======
+	at RunApp$_run_closure1.doCall(RunApp.groovy:35)
+>>>>>>> Stashed changes
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -5461,6 +5532,7 @@ groovy.lang.MissingPropertyException: No such property: unique for class: com.pi
 	at java.lang.reflect.Method.invoke(Method.java:597)
 	at org.codehaus.groovy.grails.cli.support.GrailsStarter.rootLoader(GrailsStarter.java:215)
 	at org.codehaus.groovy.grails.cli.support.GrailsStarter.main(GrailsStarter.java:240)
+<<<<<<< Updated upstream
 2010-05-10 20:05:17,470 [main] ERROR StackTrace  - Sanitizing stacktrace:
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'messageSource': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is org.codehaus.groovy.runtime.InvokerInvocationException: groovy.lang.MissingPropertyException: No such property: unique for class: com.pillar.fba.Client
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
@@ -5514,6 +5586,12 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:151)
 	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+=======
+2010-05-10 19:01:23,667 [main] ERROR StackTrace  - Sanitizing stacktrace:
+: Compilation Failed
+	at org.codehaus.groovy.ant.Groovyc.compile(Groovyc.java:831)
+	at org.codehaus.groovy.grails.compiler.GrailsCompiler.super$5$compile(GrailsCompiler.groovy)
+>>>>>>> Stashed changes
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -5522,6 +5600,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:234)
 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1049)
 	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:923)
+<<<<<<< Updated upstream
 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:880)
 	at groovy.lang.Closure.call(Closure.java:279)
 	at groovy.lang.Closure.call(Closure.java:274)
@@ -5531,16 +5610,41 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:282)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+=======
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:127)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuper0(ScriptBytecodeAdapter.java:147)
+	at org.codehaus.groovy.grails.compiler.GrailsCompiler.compile(GrailsCompiler.groovy:97)
+	at org.codehaus.groovy.ant.Groovyc.execute(Groovyc.java:544)
+	at sun.reflect.GeneratedMethodAccessor263.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at groovy.util.AntBuilder.nodeCompleted(AntBuilder.java:212)
+	at groovy.util.BuilderSupport.doInvokeMethod(BuilderSupport.java:147)
+	at groovy.util.AntBuilder.doInvokeMethod(AntBuilder.java:162)
+	at groovy.util.BuilderSupport.invokeMethod(BuilderSupport.java:64)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:129)
+	at _GrailsPackage_groovy$_run_closure8.doCall(_GrailsPackage_groovy:275)
+	at sun.reflect.GeneratedMethodAccessor266.invoke(Unknown Source)
+>>>>>>> Stashed changes
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
 	at java.lang.reflect.Method.invoke(Method.java:597)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:266)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+<<<<<<< Updated upstream
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:56)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:155)
 	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+=======
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:155)
+	at _GrailsPackage_groovy$_run_closure8.call(_GrailsPackage_groovy)
+	at sun.reflect.GeneratedMethodAccessor265.invoke(Unknown Source)
+>>>>>>> Stashed changes
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
 	at java.lang.reflect.Method.invoke(Method.java:597)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:86)
@@ -5559,6 +5663,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1011)
 	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:923)
 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:880)
+<<<<<<< Updated upstream
 	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
@@ -5612,6 +5717,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:163)
 	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+=======
+	at groovy.lang.DelegatingMetaClass.invokeMethod(DelegatingMetaClass.java:149)
+	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:127)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:155)
+	at _GrailsRun_groovy$_run_closure8.doCall(_GrailsRun_groovy:242)
+>>>>>>> Stashed changes
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -5723,7 +5835,11 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:147)
+<<<<<<< Updated upstream
 	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+=======
+	at RunApp$_run_closure1.doCall(RunApp.groovy:35)
+>>>>>>> Stashed changes
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -5904,6 +6020,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.lang.reflect.Method.invoke(Method.java:597)
 	at org.codehaus.groovy.grails.cli.support.GrailsStarter.rootLoader(GrailsStarter.java:215)
 	at org.codehaus.groovy.grails.cli.support.GrailsStarter.main(GrailsStarter.java:240)
+<<<<<<< Updated upstream
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is org.codehaus.groovy.runtime.InvokerInvocationException: groovy.lang.MissingPropertyException: No such property: unique for class: com.pillar.fba.Client
 	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:135)
 	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
@@ -5917,6 +6034,37 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
 	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
 	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+=======
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed, /Users/rich/Documents/projects/FreeBeerApp/grails-app/domain/com/pillar/fba/Project.groovy: 4: unexpected token: Client @ line 4, column 5.
+       Client client belongsTo
+       ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:353)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:94)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:61)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:249)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:163)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:820)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:513)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:489)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:466)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:450)
+	at org.codehaus.groovy.tools.FileSystemCompiler.compile(FileSystemCompiler.java:57)
+	at org.codehaus.groovy.tools.FileSystemCompiler.doCompilation(FileSystemCompiler.java:170)
+	at org.codehaus.groovy.ant.Groovyc.compile(Groovyc.java:816)
+	at org.codehaus.groovy.ant.Groovyc.execute(Groovyc.java:544)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at _GrailsPackage_groovy$_run_closure8.doCall(_GrailsPackage_groovy:275)
+	at _GrailsPackage_groovy$_run_closure8.call(_GrailsPackage_groovy)
+	at _GrailsRun_groovy$_run_closure8.doCall(_GrailsRun_groovy:242)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:35)
 	at gant.Gant$_dispatch_closure4.doCall(Gant.groovy:324)
 	at gant.Gant$_dispatch_closure6.doCall(Gant.groovy:334)
 	at gant.Gant$_dispatch_closure6.doCall(Gant.groovy)
@@ -5928,6 +6076,50 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at gant.Gant.invokeMethod(Gant.groovy)
 	at gant.Gant.processTargets(Gant.groovy:495)
 	at gant.Gant.processTargets(Gant.groovy:480)
+--- Nested Exception ---
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed, /Users/rich/Documents/projects/FreeBeerApp/grails-app/domain/com/pillar/fba/Project.groovy: 4: unexpected token: Client @ line 4, column 5.
+       Client client belongsTo
+       ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:296)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:143)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:113)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:125)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:353)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:94)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:61)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:249)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:163)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:820)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:513)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:489)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:466)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:450)
+	at org.codehaus.groovy.tools.FileSystemCompiler.compile(FileSystemCompiler.java:57)
+	at org.codehaus.groovy.tools.FileSystemCompiler.doCompilation(FileSystemCompiler.java:170)
+	at org.codehaus.groovy.ant.Groovyc.compile(Groovyc.java:816)
+	at org.codehaus.groovy.ant.Groovyc.execute(Groovyc.java:544)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at _GrailsPackage_groovy$_run_closure8.doCall(_GrailsPackage_groovy:275)
+	at _GrailsPackage_groovy$_run_closure8.call(_GrailsPackage_groovy)
+	at _GrailsRun_groovy$_run_closure8.doCall(_GrailsRun_groovy:242)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:35)
+>>>>>>> Stashed changes
+	at gant.Gant$_dispatch_closure4.doCall(Gant.groovy:324)
+	at gant.Gant$_dispatch_closure6.doCall(Gant.groovy:334)
+	at gant.Gant$_dispatch_closure6.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:344)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:334)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.processTargets(Gant.groovy:495)
+	at gant.Gant.processTargets(Gant.groovy:480)
+<<<<<<< Updated upstream
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Invocation of init method failed; nested exception is org.codehaus.groovy.runtime.InvokerInvocationException: groovy.lang.MissingPropertyException: No such property: unique for class: com.pillar.fba.Client
 	... 23 more
 Caused by: org.codehaus.groovy.runtime.InvokerInvocationException: groovy.lang.MissingPropertyException: No such property: unique for class: com.pillar.fba.Client
@@ -5936,3 +6128,5 @@ Caused by: groovy.lang.MissingPropertyException: No such property: unique for cl
 	at com.pillar.fba.Client$__clinit__closure1.doCall(Client.groovy:10)
 	at com.pillar.fba.Client$__clinit__closure1.doCall(Client.groovy)
 	... 23 more
+=======
+>>>>>>> Stashed changes
