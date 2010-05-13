@@ -11,6 +11,9 @@ class BootStrap {
     Resource matt = new Resource(name:"Matt Van Vleet",startDate:new Date(), endDate:new Date(), loadedHourlyCost:5).save();
     Resource mattLeForrest = new Resource(name:"Matt",startDate:new Date(), endDate:new Date(), loadedHourlyCost:60).save();
     Resource amber = new Resource(name:"Amber",startDate:new Date(), endDate:new Date(), loadedHourlyCost:65).save();
+	ResourcePlaceholder rp = new ResourcePlaceholder(name:"Sr. Dev",defaultHourlyCost:55).save();
+
+	Project project = new Project(name:"Community Health",description:"none",client:gale);
   }
   def destroy = {
   }
