@@ -1,6 +1,6 @@
 package com.pillar.fba
 
-class ResourcePlaceholder {
+public class ResourcePlaceholder {
 
   String name
   double defaultHourlyCost

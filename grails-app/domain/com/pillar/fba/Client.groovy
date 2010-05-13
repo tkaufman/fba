@@ -1,13 +1,13 @@
 package com.pillar.fba
 
-class Client {
+public class Client {
 
   String name
-  String abbr
+  String abbreviation
   
     static constraints = {
 		name()
-		abbr(unique:true)
+		abbreviation(unique:true)
     }
   
 }

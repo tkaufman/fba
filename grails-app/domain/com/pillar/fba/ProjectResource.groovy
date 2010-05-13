@@ -1,7 +1,7 @@
 package com.pillar.fba
 
-class ProjectResource {
-
+public class ProjectResource {
+  static belongsTo = Project
   Project project
   Resource resource
   Date startDate

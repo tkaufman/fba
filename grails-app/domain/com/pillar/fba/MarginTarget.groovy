@@ -1,6 +1,6 @@
 package com.pillar.fba
 
-class MarginTarget {
+public class MarginTarget {
     String name
     int targetPercentage
   
