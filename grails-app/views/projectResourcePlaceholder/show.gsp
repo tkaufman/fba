@@ -53,14 +53,14 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="projectResourcePlaceholder.resourcePlaceholder.label" default="Resource Placeholder" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="resourcePlaceholder" action="show" id="${projectResourcePlaceholderInstance?.resourcePlaceholder?.id}">${projectResourcePlaceholderInstance?.resourcePlaceholder?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="resourcePlaceholder" action="show" id="${projectResourcePlaceholderInstance?.resourcePlaceholder?.id}">${projectResourcePlaceholderInstance?.resourcePlaceholder?.name}</g:link></td>
                             
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="projectResourcePlaceholder.project.label" default="Project" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="project" action="show" id="${projectResourcePlaceholderInstance?.project?.id}">${projectResourcePlaceholderInstance?.project?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="project" action="show" id="${projectResourcePlaceholderInstance?.project?.id}">${projectResourcePlaceholderInstance?.project?.name}</g:link></td>
                             
                         </tr>
                     

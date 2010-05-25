@@ -48,9 +48,9 @@
                         
                             <td>${fieldValue(bean: projectResourcePlaceholderInstance, field: "perDiem")}</td>
                         
-                            <td>${fieldValue(bean: projectResourcePlaceholderInstance, field: "resourcePlaceholder")}</td>
+                            <td>${fieldValue(bean: projectResourcePlaceholderInstance, field: "resourcePlaceholder.name")}</td>
                         
-                            <td>${fieldValue(bean: projectResourcePlaceholderInstance, field: "project")}</td>
+                            <td>${fieldValue(bean: projectResourcePlaceholderInstance, field: "project.name")}</td>
                         
                         </tr>
                     </g:each>

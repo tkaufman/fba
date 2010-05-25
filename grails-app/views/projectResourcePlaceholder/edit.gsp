@@ -62,7 +62,7 @@
                                   <label for="resourcePlaceholder"><g:message code="projectResourcePlaceholder.resourcePlaceholder.label" default="Resource Placeholder" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: projectResourcePlaceholderInstance, field: 'resourcePlaceholder', 'errors')}">
-                                    <g:select name="resourcePlaceholder.id" from="${com.pillar.fba.ResourcePlaceholder.list()}" optionKey="id" value="${projectResourcePlaceholderInstance?.resourcePlaceholder?.id}"  />
+                                    <g:select name="resourcePlaceholder.id" from="${com.pillar.fba.ResourcePlaceholder.list()}" optionKey="id" optionValue="name" value="${projectResourcePlaceholderInstance?.resourcePlaceholder?.id}"  />
                                 </td>
                             </tr>
                         
@@ -71,7 +71,7 @@
                                   <label for="project"><g:message code="projectResourcePlaceholder.project.label" default="Project" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: projectResourcePlaceholderInstance, field: 'project', 'errors')}">
-                                    <g:select name="project.id" from="${com.pillar.fba.Project.list()}" optionKey="id" value="${projectResourcePlaceholderInstance?.project?.id}"  />
+                                    <g:select name="project.id" from="${com.pillar.fba.Project.list()}" optionKey="id" optionValue="name" value="${projectResourcePlaceholderInstance?.project?.id}"  />
                                 </td>
                             </tr>
                         
