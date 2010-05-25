@@ -30,35 +30,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="project.resources.label" default="Resources" /></td>
+                            <td valign="top" class="name"><g:message code="project.name.label" default="Name" /></td>
                             
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${projectInstance.resources}" var="r">
-                                    <li><g:link controller="projectResource" action="show" id="${r.id}">${r?.resource.name}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="project.client.label" default="Client" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="client" action="show" id="${projectInstance?.client?.id}">${projectInstance?.client?.name}</g:link></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="project.resourcePlaceHolders.label" default="Resource Place Holders" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${projectInstance.resourcePlaceHolders}" var="r">
-                                    <li><g:link controller="projectResourcePlaceholder" action="show" id="${r.id}">${r?.resourcePlaceholder.name}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
+                            <td valign="top" class="value">${fieldValue(bean: projectInstance, field: "name")}</td>
                             
                         </tr>
                     
@@ -70,9 +44,36 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="project.name.label" default="Name" /></td>
+                            <td valign="top" class="name"><g:message code="project.client.label" default="Client" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: projectInstance, field: "name")}</td>
+                            <td valign="top" class="value"><g:link controller="client" action="show" id="${projectInstance?.client?.id}">${projectInstance?.client?.name}</g:link></td>
+                            
+                        </tr>
+
+
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="project.resources.label" default="Resources" /></td>
+                            
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each in="${projectInstance.resources}" var="r">
+                                    <li><g:link controller="projectResource" action="show" id="${r.id}">${r?.resource.name}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="project.resourcePlaceHolders.label" default="Resource Place Holders" /></td>
+                            
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each in="${projectInstance.resourcePlaceHolders}" var="r">
+                                    <li><g:link controller="projectResourcePlaceholder" action="show" id="${r.id}">${r?.resourcePlaceholder.name}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
                             
                         </tr>
                     
