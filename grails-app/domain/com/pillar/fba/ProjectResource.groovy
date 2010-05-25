@@ -18,14 +18,8 @@ public class ProjectResource {
    }
 
    def double calculateBillableHours(){
-	double rval = 0.0;
 	int daysBetween = (endDate - startDate)
-	if(daysBetween < 5) {
-	    rval = daysBetween * (hoursPerWeek / WORK_DAYS_PER_WEEK)   
-	} else {
-	    rval = calculateBusinessDaysOnProject() * (hoursPerWeek / WORK_DAYS_PER_WEEK)
-	}
-	return rval
+	return calculateBusinessDaysOnProject() * (hoursPerWeek / WORK_DAYS_PER_WEEK)
    }
 
    def int calculateBusinessDaysOnProject(){
@@ -33,7 +27,7 @@ public class ProjectResource {
 
 	while(startDate.getTimeInMillis() <= endDate.getTimeInMillis()){
 	    if (startDate.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY && startDate.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
-	    ++rval
+	        ++rval
 	    }
 	    startDate.add(Calendar.DAY_OF_MONTH, 1)
 	}

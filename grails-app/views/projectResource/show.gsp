@@ -70,6 +70,7 @@
                             <td valign="top" class="value"><g:link controller="resource" action="show" id="${projectResourceInstance?.resource?.id}">${projectResourceInstance?.resource?.name}</g:link></td>
                             
                         </tr>
+
                     
                     </tbody>
                 </table>

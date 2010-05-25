@@ -18,9 +18,9 @@ class ProjectResourceTest extends GrailsUnitTestCase {
     void testCalculateTotalBillableHoursFor1Day(){
 	//((end date - start date) / 7 * hoursPerWeek
         Calendar startDate = Calendar.getInstance()
-	startDate.set(2010, Calendar.MAY, 1)
+	startDate.set(2010, Calendar.MAY, 3)
 	Calendar endDate = Calendar.getInstance()
-	endDate.set(2010, Calendar.MAY, 2)
+	endDate.set(2010, Calendar.MAY, 3)
 	ProjectResource resource = new ProjectResource(startDate:startDate, endDate:endDate, hoursPerWeek:40)
 	assertEquals(8, resource.calculateBillableHours())
     }
@@ -28,9 +28,9 @@ class ProjectResourceTest extends GrailsUnitTestCase {
     void testCalculateTotalBillableHoursFor2Days(){
 	//((end date - start date) / 7 * hoursPerWeek
         Calendar startDate = Calendar.getInstance()
-	startDate.set(2010, Calendar.MAY, 1)
+	startDate.set(2010, Calendar.MAY, 3)
 	Calendar endDate = Calendar.getInstance()
-	endDate.set(2010, Calendar.MAY, 3)
+	endDate.set(2010, Calendar.MAY, 4)
 	ProjectResource resource = new ProjectResource(startDate:startDate, endDate:endDate, hoursPerWeek:40)
 	assertEquals(16, resource.calculateBillableHours())
     }    
