@@ -32,7 +32,7 @@
                                     <label for="client"><g:message code="project.client.label" default="Client" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'client', 'errors')}">
-                                    <g:select name="client.id" from="${com.pillar.fba.Client.list()}" optionKey="id" value="${projectInstance?.client?.id}"  />
+                                    <g:select name="client.id" from="${com.pillar.fba.Client.list()}" optionKey="id" optionValue="name" value="${projectInstance?.client?.id}"  />
                                 </td>
                             </tr>
                         

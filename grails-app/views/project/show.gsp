@@ -35,7 +35,7 @@
                             <td valign="top" style="text-align: left;" class="value">
                                 <ul>
                                 <g:each in="${projectInstance.resources}" var="r">
-                                    <li><g:link controller="projectResource" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+                                    <li><g:link controller="projectResource" action="show" id="${r.id}">${r?.resource.name}</g:link></li>
                                 </g:each>
                                 </ul>
                             </td>
@@ -45,7 +45,7 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="project.client.label" default="Client" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="client" action="show" id="${projectInstance?.client?.id}">${projectInstance?.client?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="client" action="show" id="${projectInstance?.client?.id}">${projectInstance?.client?.name}</g:link></td>
                             
                         </tr>
                     
@@ -55,7 +55,7 @@
                             <td valign="top" style="text-align: left;" class="value">
                                 <ul>
                                 <g:each in="${projectInstance.resourcePlaceHolders}" var="r">
-                                    <li><g:link controller="projectResourcePlaceholder" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+                                    <li><g:link controller="projectResourcePlaceholder" action="show" id="${r.id}">${r?.resourcePlaceholder.name}</g:link></li>
                                 </g:each>
                                 </ul>
                             </td>
