@@ -23,12 +23,12 @@ public class ProjectResource {
 	if(daysBetween < 5) {
 	    rval = daysBetween * (hoursPerWeek / WORK_DAYS_PER_WEEK)   
 	} else {
-	    rval = getBusinessDaysOnProject() * (hoursPerWeek / WORK_DAYS_PER_WEEK)
+	    rval = calculateBusinessDaysOnProject() * (hoursPerWeek / WORK_DAYS_PER_WEEK)
 	}
 	return rval
    }
 
-   def int getBusinessDaysOnProject(){
+   def int calculateBusinessDaysOnProject(){
 	int rval = 0;
 
 	while(startDate.getTimeInMillis() <= endDate.getTimeInMillis()){
