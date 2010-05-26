@@ -8,13 +8,12 @@ public class Project {
     Client client
     String name
     String description
-    int totalProjectCost
 
     static constraints = {
         description(size:1..255, blank:false)
     }
 
-    def int getTotalProjectCost() {
+    def int calculateTotalProjectCost() {
        return 0;
     }
 
