@@ -6,4 +6,8 @@ public class MarginTarget {
   
     static constraints = {
     }
+
+    public double estimateProject(Project project){
+        return project.calculateTotalProjectCost() * (1 + (targetPercentage / 100))
+    }
 }

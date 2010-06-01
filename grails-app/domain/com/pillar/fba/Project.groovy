@@ -8,13 +8,18 @@ public class Project {
     Client client
     String name
     String description
+    List resources = new ArrayList()
 
     static constraints = {
         description(size:1..255, blank:false)
     }
 
     def int calculateTotalProjectCost() {
-       return 0;
+       int rval = 0;
+       for(Resource resource : resources){
+           rval += resource.calculateCost()
+       }
+       return rval
     }
 
 
