@@ -57,6 +57,32 @@ class ProjectTests extends GrailsUnitTestCase {
         return john
     }
 
+    private ResourcePlaceholder buildSrDevPlaceHolder(){
+        ResourcePlaceholder srDev = new ResourcePlaceholder(name:"Sr. Dev", defaultHourlyCost:100)
+        return srDev
+    }
+
+    private ProjectResourcePlaceholder buildProjectResourcePlaceholderFor1Week(ResourcePlaceholder resource, int hoursPerWeek, int perDiem){
+        Calendar startDate = Calendar.getInstance()
+	startDate.set(2010, Calendar.MAY, 3)
+        Calendar endDate = Calendar.getInstance()
+	endDate.set(2010, Calendar.MAY, 7)
+
+        ProjectResourcePlaceholder projectResource = buildProjectResourcePlaceholder(startDate, endDate)
+
+        projectResource.resourcePlaceholder = resource
+        projectResource.hoursPerWeek = hoursPerWeek
+        projectResource.perDiem = perDiem
+        return projectResource
+    }
+
+    private ProjectResourcePlaceholder buildProjectResourcePlaceholder(Calendar startDate, Calendar endDate){
+        ProjectResourcePlaceholder projectResource = new ProjectResourcePlaceholder()
+        projectResource.startDate = startDate
+        projectResource.endDate = endDate
+        return projectResource
+    }
+
     protected void tearDown() {
         super.tearDown()
     }
@@ -93,5 +119,18 @@ class ProjectTests extends GrailsUnitTestCase {
         project.resources.add(buildProjectResourceFor8Weeks(buildZachResource(), 40, 0))
         project.resources.add(buildProjectResourceFor1Week(buildJohnResource(), 40, 0))
         assertEquals(19000, project.calculateTotalProjectCost())
+    }
+
+    public void testCalculateWithAResourcePlaceholder(){
+        Project project = new Project()
+        project.resourcePlaceHolders.add(buildProjectResourcePlaceholderFor1Week(buildSrDevPlaceHolder(), 40, 0))
+        assertEquals(4000, project.calculateTotalProjectCost())
+    }
+
+    public void testCalculateWithAResourcePlaceholderAndAResource(){
+        Project project = new Project()
+        project.resourcePlaceHolders.add(buildProjectResourcePlaceholderFor1Week(buildSrDevPlaceHolder(), 40, 0))
+        project.resources.add(buildProjectResourceFor1Week(buildZachResource(), 40, 0))
+        assertEquals(6000, project.calculateTotalProjectCost())
     }
 }

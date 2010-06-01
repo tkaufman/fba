@@ -9,6 +9,7 @@ public class Project {
     String name
     String description
     List resources = new ArrayList()
+    List resourcePlaceHolders = new ArrayList()
 
     static constraints = {
         description(size:1..255, blank:false)
@@ -16,8 +17,11 @@ public class Project {
 
     def int calculateTotalProjectCost() {
        int rval = 0;
-       for(Resource resource : resources){
+       for(ProjectResource resource : resources){
            rval += resource.calculateCost()
+       }
+       for(ProjectResourcePlaceholder placeHolder : resourcePlaceHolders){
+           rval += placeHolder.calculateCost()
        }
        return rval
     }
