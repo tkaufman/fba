@@ -8,7 +8,7 @@ public class ProjectResource extends AbstractProjectResource{
 		
     }
 
-    double getCost() {
+    double determineCost() {
         return resource.loadedHourlyCost
     }
 

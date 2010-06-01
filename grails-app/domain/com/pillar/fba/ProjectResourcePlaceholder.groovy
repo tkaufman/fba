@@ -8,7 +8,7 @@ class ProjectResourcePlaceholder extends AbstractProjectResource{
 		
     }
 
-    double getCost() {
+    double determineCost() {
         return resourcePlaceholder.defaultHourlyCost
     }
 }

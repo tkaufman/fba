@@ -14,10 +14,10 @@ abstract class AbstractProjectResource {
 
     }
 
-    abstract double getCost()
+    abstract double determineCost()
 
     double calculateCost(){
-        return (calculateBillableHours() * getCost()) + (calculateBusinessDaysOnProject() * perDiem)
+        return (calculateBillableHours() * determineCost()) + (calculateBusinessDaysOnProject() * perDiem)
     }
 
     double calculateBillableHours(){
