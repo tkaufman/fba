@@ -8,8 +8,8 @@ public class Project {
     Client client
     String name
     String description
-    List resources = new ArrayList()
-    List resourcePlaceHolders = new ArrayList()
+    Set resources = new HashSet()
+    Set resourcePlaceHolders = new HashSet()
 
     static constraints = {
         description(size:1..255, blank:false)
