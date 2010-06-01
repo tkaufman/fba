@@ -1,6 +1,9 @@
 
 <%@ page import="com.pillar.fba.Project" %>
 <html>
+<%
+def projectTotalCost = projectInstance.calculateTotalProjectCost()
+%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
@@ -76,7 +79,10 @@
                             </td>
                             
                         </tr>
-                    
+			<tr class="prop">
+				<td>Project Total Cost</td>
+				<td>${projectTotalCost}</td>
+			</tr>                    
                     </tbody>
                 </table>
             </div>
