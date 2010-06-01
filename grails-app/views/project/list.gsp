@@ -22,13 +22,12 @@
                     <thead>
                         <tr>
                         
-                            <g:sortableColumn property="id" title="${message(code: 'project.id.label', default: 'Id')}" />
+                            <g:sortableColumn property="id" title="${message(code: 'project.id.label', default: 'Name')}" />
                         
                             <th><g:message code="project.client.label" default="Client" /></th>
                    	    
                             <g:sortableColumn property="description" title="${message(code: 'project.description.label', default: 'Description')}" />
                         
-                            <g:sortableColumn property="name" title="${message(code: 'project.name.label', default: 'Name')}" />
                         
                         </tr>
                     </thead>
@@ -36,13 +35,12 @@
                     <g:each in="${projectInstanceList}" status="i" var="projectInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${projectInstance.id}">${fieldValue(bean: projectInstance, field: "id")}</g:link></td>
+                            <td><g:link action="show" id="${projectInstance.id}">${fieldValue(bean: projectInstance, field: "name")}</g:link></td>
                         
-                            <td>${fieldValue(bean: projectInstance, field: "client")}</td>
+                            <td>${fieldValue(bean: projectInstance, field: "client.name")}</td>
                         
                             <td>${fieldValue(bean: projectInstance, field: "description")}</td>
                         
-                            <td>${fieldValue(bean: projectInstance, field: "name")}</td>
                         
                         </tr>
                     </g:each>

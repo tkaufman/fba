@@ -33,23 +33,6 @@
                     <table>
                         <tbody>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="client"><g:message code="project.client.label" default="Client" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'client', 'errors')}">
-                                    <g:select name="client.id" from="${com.pillar.fba.Client.list()}" optionKey="id" value="${projectInstance?.client?.id}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="description"><g:message code="project.description.label" default="Description" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'description', 'errors')}">
-                                    <g:textField name="description" value="${projectInstance?.description}" />
-                                </td>
-                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -59,7 +42,24 @@
                                     <g:textField name="name" value="${projectInstance?.name}" />
                                 </td>
                             </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="description"><g:message code="project.description.label" default="Description" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'description', 'errors')}">
+                                    <g:textField name="description" value="${projectInstance?.description}" />
+                                </td>
+                            </tr>
+                        
                           
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="client"><g:message code="project.client.label" default="Client" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'client', 'errors')}">
+                                    <g:select name="client.id" from="${com.pillar.fba.Client.list()}" optionKey="id" optionValue="name" value="${projectInstance?.client?.id}"  />
+                                </td>
+                            </tr>
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="resources"><g:message code="project.resources.label" default="Resources" /></label>
@@ -68,7 +68,7 @@
                                     
 <ul>
 <g:each in="${projectInstance?.resources?}" var="r">
-    <li><g:link controller="projectResource" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+    <li><g:link controller="projectResource" action="edit" id="${r.id}">${r?.resource.name}</g:link></li>
 </g:each>
 </ul>
 <g:link controller="projectResource" action="create" params="['project.id': projectInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'projectResource.label', default: 'ProjectResource')])}</g:link>
@@ -84,7 +84,7 @@
                                     
 <ul>
 <g:each in="${projectInstance?.resourcePlaceHolders?}" var="r">
-    <li><g:link controller="projectResourcePlaceholder" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+    <li><g:link controller="projectResourcePlaceholder" action="edit" id="${r.id}">${r?.resourcePlaceholder.name}</g:link></li>
 </g:each>
 </ul>
 <g:link controller="projectResourcePlaceholder" action="create" params="['project.id': projectInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'projectResourcePlaceholder.label', default: 'ProjectResourcePlaceholder')])}</g:link>

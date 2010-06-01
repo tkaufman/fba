@@ -1,15 +1,14 @@
 package com.pillar.fba
 
-class ProjectResourcePlaceholder {
+class ProjectResourcePlaceholder extends AbstractProjectResource{
 
-  Project project
-  ResourcePlaceholder resourcePlaceholder
-  Date startDate
-  Date endDate
-  int hoursPerWeek
-  int perDiem
+    ResourcePlaceholder resourcePlaceholder
   
     static constraints = {
 		
+    }
+
+    double getCost() {
+        return resourcePlaceholder.defaultHourlyCost
     }
 }
