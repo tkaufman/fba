@@ -13,7 +13,9 @@ class BootStrap {
     Resource amber = new Resource(name:"Amber",startDate:new Date(), endDate:new Date(), loadedHourlyCost:65).save()
     ResourcePlaceholder rp = new ResourcePlaceholder(name:"Sr. Dev",defaultHourlyCost:55).save()
     Project project = new Project(name:"Community Health",description:"Community Health Portal Project",client:gale).save()
-    MarginTarget target1 = new MarginTarget(name:"Test", targetPercentage:30).save()
+    MarginTarget target15 = new MarginTarget(name:"15%", targetPercentage:15).save()
+    MarginTarget target20 = new MarginTarget(name:"20%", targetPercentage:20).save()
+    MarginTarget target25 = new MarginTarget(name:"25%", targetPercentage:25).save()
     ProjectResource pr = new ProjectResource(resource:matt, startDate:Calendar.getInstance(), endDate:Calendar.getInstance(), hoursPerWeek:40, project:project).save()
   }
   def destroy = {

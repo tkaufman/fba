@@ -37,4 +37,5 @@ class MarginTargetTests extends GrailsUnitTestCase {
 	def answer = target40Percent.estimateProject(mattsProject)
         assertEquals(100,answer)
     }
+    
 }
