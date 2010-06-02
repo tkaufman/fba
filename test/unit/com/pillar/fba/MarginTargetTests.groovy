@@ -5,14 +5,13 @@ import grails.test.GrailsUnitTestCase
 class MarginTargetTests extends GrailsUnitTestCase {
 
     MarginTarget target10Percent = new MarginTarget(name:"10 Percent", targetPercentage:10)
-    MarginTarget target15Percent = new MarginTarget(name:"15 Percent", targetPercentage:15)
-    MarginTarget target25Percent = new MarginTarget(name:"25 Percent", targetPercentage:25)
+    MarginTarget target0Percent = new MarginTarget(name:"0 Percent", targetPercentage:0)
     def project;
     
     protected void setUp() {
         super.setUp()
         project = mockFor(Project)
-        project.demand.calculateTotalProjectCost(1..1) {-> return 19000}
+        project.demand.calculateTotalProjectCost(1..1) {-> return 63}
         project = project.createMock()
 
     }
@@ -22,12 +21,20 @@ class MarginTargetTests extends GrailsUnitTestCase {
     }
 
     void testProjectEstimateWith10PercentTarget() {
-        assertEquals(20900, target10Percent.estimateProject(project))
+        assertEquals(70, target10Percent.estimateProject(project))
     }
-    void testProjectEstimateWith15PercentTarget() {
-        assertEquals(21850, target15Percent.estimateProject(project))
+    void testProjectEstimateWith0PercentTarget() {
+        assertEquals(63, target0Percent.estimateProject(project))
     }
-    void testProjectEstimateWith25PercentTarget() {
-        assertEquals(23750, target25Percent.estimateProject(project))
+    void testMattsKnowledgeOfAMarginTarget() {
+        //mt=40%
+	//rc=60
+	//price=100
+        MarginTarget target40Percent = new MarginTarget(name:"40 Percent", targetPercentage:40)
+        def mattsProject = mockFor(Project)
+        mattsProject.demand.calculateTotalProjectCost(1..1) {-> return 60}
+        mattsProject = mattsProject.createMock()
+	def answer = target40Percent.estimateProject(mattsProject)
+        assertEquals(100,answer)
     }
 }
