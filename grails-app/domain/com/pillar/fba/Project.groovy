@@ -26,13 +26,13 @@ public class Project {
        return rval
     }
 
-    public HashMap retrieveAllEstimatesForProject(){
+    public TreeMap retrieveAllEstimatesForProject(){
         def targets = MarginTarget.list()
         Map estimates = new HashMap()
         for(MarginTarget target : targets){
             estimates.put(target.targetPercentage, target.estimateProject(this))
         }
-        return estimates
+        return new TreeMap(estimates)
     }
 
 }

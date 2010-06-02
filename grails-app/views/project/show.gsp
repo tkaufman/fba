@@ -4,6 +4,9 @@
 <%
 def projectTotalCost = projectInstance.calculateTotalProjectCost()
 %>
+<%
+def estimates = projectInstance.retrieveAllEstimatesForProject()
+%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
@@ -82,7 +85,13 @@ def projectTotalCost = projectInstance.calculateTotalProjectCost()
 			<tr class="prop">
 				<td>Project Total Cost</td>
 				<td>${projectTotalCost}</td>
-			</tr>                    
+			</tr>
+                          <g:each var="estimate" in="${estimates}">
+                            <tr class="prop">
+                              <td>Estimate for ${estimate.key}%</td>
+                              <td>${estimate.value}</td>
+                            </tr>
+                          </g:each>
                     </tbody>
                 </table>
             </div>
