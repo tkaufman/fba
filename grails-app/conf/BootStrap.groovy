@@ -12,7 +12,7 @@ class BootStrap {
     Resource mattLeForrest = new Resource(name:"Matt",startDate:new Date(), endDate:new Date(), loadedHourlyCost:60).save()
     Resource amber = new Resource(name:"Amber",startDate:new Date(), endDate:new Date(), loadedHourlyCost:65).save()
     ResourcePlaceholder rp = new ResourcePlaceholder(name:"Sr. Dev",defaultHourlyCost:55).save()
-    Project project = new Project(name:"Community Health",description:"Community Health Portal Project",client:gale).save()
+    Project project = new Project(name:"Community Health",description:"Community Health Portal Project",client:gale, projectStatus:"Started").save()
     MarginTarget target15 = new MarginTarget(name:"15%", targetPercentage:15).save()
     MarginTarget target20 = new MarginTarget(name:"20%", targetPercentage:20).save()
     MarginTarget target25 = new MarginTarget(name:"25%", targetPercentage:25).save()

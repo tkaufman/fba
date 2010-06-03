@@ -10,7 +10,7 @@ class MarginTargetIntegrationTestTests extends GrailsUnitTestCase {
 
         Resource resource = new Resource(name:"Resource Name",startDate:new Date(), endDate:new Date(), loadedHourlyCost:25).save()
         Client client = new Client(name:"Client Name",abbreviation:"CLIE").save()
-        Project projectToSave = new Project(name:projectName,description:"Community Health Portal Project",client:client).save()
+        Project projectToSave = new Project(name:projectName,description:"Community Health Portal Project",client:client, projectStatus:"Started").save()
         ProjectResource pr = new ProjectResource(resource:resource,startDate:Calendar.getInstance(), endDate:Calendar.getInstance(), hoursPerWeek:40, project:projectToSave).save()
         projectToSave.resources.add(pr)
     }

@@ -7,6 +7,9 @@ def projectTotalCost = projectInstance.calculateTotalProjectCost()
 <%
 def estimates = projectInstance.retrieveAllEstimatesForProject()
 %>
+<%
+def profitMargin = projectInstance.calculateProfitMargin()
+%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
@@ -86,6 +89,22 @@ def estimates = projectInstance.retrieveAllEstimatesForProject()
 				<td>Project Total Cost</td>
 				<td>${projectTotalCost}</td>
 			</tr>
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="project.price.label" default="Price" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: projectInstance, field: "price")}</td>
+                            
+                        </tr>
+			<tr class="prop">
+				<td>Profit Margin</td>
+				<td>${profitMargin}%</td>
+			</tr>
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="project.projectStatus.label" default="Project Status" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: projectInstance, field: "projectStatus")}</td>
+                            
+                        </tr>
                           <g:each var="estimate" in="${estimates}">
                             <tr class="prop">
                               <td>Estimate for ${estimate.key}%</td>

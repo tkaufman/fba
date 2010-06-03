@@ -42,6 +42,28 @@
                                     <g:textField name="name" value="${projectInstance?.name}" />
                                 </td>
                             </tr>
+
+
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="name"><g:message code="project.price.label" default="Price" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'price', 'errors')}">
+                                    <g:textField name="price" value="${projectInstance?.price}" />
+                                </td>
+                            </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="name"><g:message code="project.projectStatus.label" default="Project Status" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'projectStatus', 'errors')}">
+                                    <g:textField name="projectStatus" value="${projectInstance?.projectStatus}" />
+                                </td>
+                            </tr>
+
+
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="description"><g:message code="project.description.label" default="Description" /></label>

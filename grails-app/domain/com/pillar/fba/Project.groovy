@@ -8,6 +8,8 @@ public class Project {
     Client client
     String name
     String description
+    int price
+    String projectStatus
     Set resources = new HashSet()
     Set resourcePlaceHolders = new HashSet()
 
@@ -33,6 +35,14 @@ public class Project {
             estimates.put(target.targetPercentage, target.estimateProject(this))
         }
         return new TreeMap(estimates)
+    }
+
+    def double calculateProfitMargin(){
+        if(price > 0) {
+            return ((price - calculateTotalProjectCost()) / price ) * 100
+        } else {
+            return 0
+        }
     }
 
 }
