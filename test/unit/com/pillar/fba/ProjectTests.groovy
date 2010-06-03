@@ -133,4 +133,30 @@ class ProjectTests extends GrailsUnitTestCase {
         project.resources.add(buildProjectResourceFor1Week(buildZachResource(), 40, 0))
         assertEquals(6000, project.calculateTotalProjectCost())
     }
+
+    public void testCalculateProfitMargin(){
+        Project project = new Project()
+        Resource resource = buildZachResource()
+        resource.loadedHourlyCost = 5
+        project.resources.add(buildProjectResourceFor1Week(resource, 8, 0))
+        project.price = 50
+        assertEquals(20, project.calculateProfitMargin())
+    }
+
+    public void testCalculateProfitMargin2(){
+        Project project = new Project()
+        Resource resource = buildZachResource()
+        resource.loadedHourlyCost = 5
+        project.resources.add(buildProjectResourceFor1Week(resource, 8, 0))
+        project.price = 80
+        assertEquals(50, project.calculateProfitMargin())
+    }
+    public void testCalculateProfitMargin3(){
+        Project project = new Project()
+        Resource resource = buildZachResource()
+        resource.loadedHourlyCost = 5
+        project.resources.add(buildProjectResourceFor1Week(resource, 8, 0))
+        project.price = 100
+        assertEquals(60, project.calculateProfitMargin())
+    }
 }
