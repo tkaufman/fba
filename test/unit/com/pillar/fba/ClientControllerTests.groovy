@@ -1,6 +1,6 @@
 package com.pillar.fba
 
-import grails.test.ControllerUnitTestCase
+import grails.test.*
 
 class ClientControllerTests extends ControllerUnitTestCase {
     protected void setUp() {
