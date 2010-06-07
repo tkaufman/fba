@@ -13,6 +13,7 @@ public class Project {
     Set resources = new HashSet()
     Set resourcePlaceHolders = new HashSet()
 
+
     static constraints = {
         description(size:1..255, blank:false)
     }
@@ -44,5 +45,39 @@ public class Project {
             return 0
         }
     }
+	
+	def  getEarliestResourceStartDate(){
+		Calendar start = Calendar.getInstance()
+		Iterator itr = resources.iterator()
+		ProjectResource firstResource = itr.next()
+		start.setTime(firstResource.startDate.getTime())
+
+		
+		for(ProjectResource resource : resources){
+			if(start.compareTo(resource.startDate)<0)			
+				start.setTime(resource.startDate.getTime())		
+		}
+		
+		return start
+	}
+	
+	def  getLatestResourceEndDate(){
+		Calendar end = Calendar.getInstance()
+		Iterator itr = resources.iterator()
+		end.setTime(itr.next().endDate.getTime())
+
+		for(ProjectResource resource : resources){
+			if(end.compareTo(resource.endDate)<0)			
+				end.setTime(resource.endDate.getTime())		
+		}
+	
+		return end
+	}
+	
+	def calculateMonthlyProjectedCosts(){	
+		ProjectProjectedCost projectedMonthlyCost = new ProjectProjectedCost(Project : this)
+		return projectedMonthlyCost.calculateMonthlyProjectedCostForAllMonths()
+	}
+	
 
 }

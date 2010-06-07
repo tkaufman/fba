@@ -1,5 +1,6 @@
 
 <%@ page import="com.pillar.fba.Project" %>
+<%@ page import="com.pillar.fba.ProjectProjectedCost" %>
 <html>
 <%
 def projectTotalCost = projectInstance.calculateTotalProjectCost()
@@ -10,6 +11,10 @@ def estimates = projectInstance.retrieveAllEstimatesForProject()
 <%
 def profitMargin = projectInstance.calculateProfitMargin()
 %>
+<%
+def projectedMonthlyCosts = projectInstance.calculateMonthlyProjectedCosts() 
+%>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
@@ -59,6 +64,7 @@ def profitMargin = projectInstance.calculateProfitMargin()
                             
                         </tr>
 
+						
 
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="project.resources.label" default="Resources" /></td>
@@ -111,6 +117,24 @@ def profitMargin = projectInstance.calculateProfitMargin()
                               <td>${estimate.value}</td>
                             </tr>
                           </g:each>
+						  
+						  
+						<tr class="prop">
+                            <td valign="top" class="name"> Monthly Projected Cost </td>
+                            
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each var="monthCost" in="${projectedMonthlyCosts}">
+									<li>
+										${monthCost.key} : ${monthCost.value}
+									</li>
+                                </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+
+
                     </tbody>
                 </table>
             </div>
