@@ -3,7 +3,7 @@ package com.pillar.fba
 class ProjectProjectedCost {
 
   Project project
-  Map monthlyCosts  = new HashMap()
+  Map monthlyCosts  = new LinkedHashMap()
 
   
   
