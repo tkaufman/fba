@@ -35,16 +35,6 @@
                                     <g:select name="client.id" from="${com.pillar.fba.Client.list()}" optionKey="id" optionValue="name" value="${projectInstance?.client?.id}"  />
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="description"><g:message code="project.description.label" default="Description" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'description', 'errors')}">
-                                    <g:textField name="description" value="${projectInstance?.description}" />
-                                </td>
-                            </tr>
-                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="name"><g:message code="project.name.label" default="Name" /></label>
@@ -53,7 +43,15 @@
                                     <g:textField name="name" value="${projectInstance?.name}" />
                                 </td>
                             </tr>
-                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="description"><g:message code="project.description.label" default="Description" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'description', 'errors')}">
+                                    <g:textArea name="description" value="${projectInstance?.description}" />
+                                </td>
+                            </tr>
+                            <input type="hidden" name="projectStatus" value="Generated" />                        
                         </tbody>
                     </table>
                 </div>

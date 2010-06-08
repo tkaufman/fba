@@ -6,7 +6,7 @@ abstract class AbstractProjectResource {
     Project project
     Calendar startDate
     Calendar endDate
-    int hoursPerWeek
+    int hoursPerWeek = 40
     int perDiem
     static final int WORK_DAYS_PER_WEEK = 5
 

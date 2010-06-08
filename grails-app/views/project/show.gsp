@@ -93,12 +93,12 @@ def projectedMonthlyCosts = projectInstance.calculateMonthlyProjectedCosts()
                         </tr>
 			<tr class="prop">
 				<td>Project Total Cost</td>
-				<td>${projectTotalCost}</td>
+				<td><g:formatNumber number="${projectTotalCost}" format="\$###,##0" /></td>
 			</tr>
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="project.price.label" default="Price" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: projectInstance, field: "price")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: projectInstance, field: 'price')}</td>
                             
                         </tr>
 			<tr class="prop">
@@ -114,7 +114,7 @@ def projectedMonthlyCosts = projectInstance.calculateMonthlyProjectedCosts()
                           <g:each var="estimate" in="${estimates}">
                             <tr class="prop">
                               <td>Estimate for ${estimate.key}%</td>
-                              <td>${estimate.value}</td>
+                              <td><g:formatNumber number="${estimate.value}" format="\$###,###.##" /></td>
                             </tr>
                           </g:each>
 						  
