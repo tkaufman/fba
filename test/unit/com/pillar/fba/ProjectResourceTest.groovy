@@ -13,8 +13,14 @@ class ProjectResourceTest extends GrailsUnitTestCase {
     }
 
     void testCalculateTotalBillableHoursFor1Day(){
-        ProjectResource resource = buildProjectResourceFor1Day()
-	assertEquals(8, resource.calculateBillableHours())
+		Resource resource = buildResource("resource1", 40)
+		Calendar startDate = Calendar.getInstance()
+		startDate.set(2010, Calendar.MAY, 3)
+		Calendar endDate = Calendar.getInstance()
+		endDate.set(2010, Calendar.MAY, 3)
+
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
+		assertEquals(8, projectResource.calculateBillableHours())
     }
 
     void testCalculateTotalBillableHoursFor2Days(){
@@ -58,13 +64,24 @@ class ProjectResourceTest extends GrailsUnitTestCase {
     }
 
     void testCalculateCostFor1DayWithNoPerDiem(){
-        ProjectResource projectResource = buildProjectResourceFor1Day()
+		Resource resource = buildResource("resource1", 50)
+		Calendar startDate = Calendar.getInstance()
+		startDate.set(2010, Calendar.MAY, 3)
+		Calendar endDate = Calendar.getInstance()
+		endDate.set(2010, Calendar.MAY, 3)
+
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null, 0)
         assertEquals(400, projectResource.calculateCost())
     }
 
     void testCalculateCostFor1DayWithPerDiem(){
-        ProjectResource projectResource = buildProjectResourceFor1Day()
-        projectResource.perDiem = 40;
+		Resource resource = buildResource("resource1", 50)
+		Calendar startDate = Calendar.getInstance()
+		startDate.set(2010, Calendar.MAY, 3)
+		Calendar endDate = Calendar.getInstance()
+		endDate.set(2010, Calendar.MAY, 3)
+
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null, 40)
         assertEquals(440, projectResource.calculateCost())
     }
 
@@ -76,21 +93,78 @@ class ProjectResourceTest extends GrailsUnitTestCase {
 	ProjectResource projectResource = new ProjectResource(startDate:startDate, endDate:endDate, hoursPerWeek:5)
         assertEquals(5, projectResource.calculateBillableHours())
     }
+	
+	void testCalculateProjectedCostForGivenMonthWithOneDayOfWork(){
+		Resource resource = buildResource("resource1", 50)
+		Calendar startDate = Calendar.getInstance()
+		startDate.set(2010, Calendar.MAY, 3)
+		Calendar endDate = Calendar.getInstance()
+		endDate.set(2010, Calendar.MAY, 3)
 
-    Resource buildResource(){
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
+		assertEquals(400, projectResource.calculateProjectedCostForAGivenMonth(startDate))
+	}
+	
+	void testCalculateProjectedCostForGivenMonthWithoutDayOfWork(){
+		Resource resource = buildResource("resource1", 50)
+		Calendar startDate = Calendar.getInstance()
+		startDate.set(2010, Calendar.JUNE, 12)
+		Calendar endDate = Calendar.getInstance()
+		endDate.set(2010, Calendar.JUNE, 12)
+
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
+		assertEquals(0, projectResource.calculateProjectedCostForAGivenMonth(startDate))
+	}
+	
+	void testCalculateBillableHoursForGivenMonthWithoutDayOfWorkOrOnlyWeekend(){
+		Resource resource = buildResource("resource1", 50)
+		Calendar startDate = Calendar.getInstance()
+		startDate.set(2010, Calendar.JUNE, 12)
+		Calendar endDate = Calendar.getInstance()
+		endDate.set(2010, Calendar.JUNE, 12)
+
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
+		assertEquals(0, projectResource.calculateBillableHoursForAGivenMonth(startDate))
+	}
+	
+	void testCalculateBillableHoursForGivenMonthWithManyDayOfWork(){
+		Resource resource = buildResource("resource1", 50)
+		Calendar startDate = Calendar.getInstance()
+		startDate.set(2010, Calendar.JUNE, 14)
+		Calendar endDate = Calendar.getInstance()
+		endDate.set(2010, Calendar.JUNE, 18)
+
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
+		assertEquals(40, projectResource.calculateBillableHoursForAGivenMonth(startDate))
+	}
+	
+	void testCalculateBusinessDaysOnprojectForGivenMonth(){
+		Resource resource = buildResource("resource1", 50)
+		Calendar startDate = Calendar.getInstance()
+		startDate.set(2010, Calendar.JUNE, 14)
+		Calendar endDate = Calendar.getInstance()
+		endDate.set(2010, Calendar.JUNE, 18)
+
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
+		assertEquals(5, projectResource.calculateBusinessDaysOnProjectForGivenMonth(startDate))
+
+		startDate.set(2010, Calendar.JUNE, 13)
+		endDate.set(2010, Calendar.JUNE, 13)
+
+        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
+		assertEquals(5, projectResource.calculateBusinessDaysOnProjectForGivenMonth(startDate))
+	}
+	
+    Resource buildResource(String resourceName, int resourceLoadedHourlyCost){
         Resource resource = new Resource()
-        resource.name = "Test Name"
-        resource.loadedHourlyCost = 50
+        resource.name = resourceName
+        resource.loadedHourlyCost = resourceLoadedHourlyCost
         return resource
     }
 
-    ProjectResource buildProjectResourceFor1Day(){
-        Calendar startDate = Calendar.getInstance()
-	startDate.set(2010, Calendar.MAY, 3)
-	Calendar endDate = Calendar.getInstance()
-	endDate.set(2010, Calendar.MAY, 3)
-	ProjectResource projectResource = new ProjectResource(startDate:startDate, endDate:endDate, hoursPerWeek:40)
-        projectResource.resource = buildResource()
+    ProjectResource buildProjectResource(Resource resource, Calendar startDate, Calendar endDate, Project project, int perDiem){
+
+		ProjectResource projectResource = new ProjectResource(startDate:startDate, endDate:endDate, hoursPerWeek:40, perDiem:perDiem, resource:resource)
         return projectResource
     }
 }
