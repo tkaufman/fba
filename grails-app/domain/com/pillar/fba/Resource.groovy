@@ -3,9 +3,13 @@ package com.pillar.fba
 class Resource {
 
   String name
+  String cityOfResidence
+  String stateOfResidence
   Date startDate
   Date endDate
-  double loadedHourlyCost
+  double loadedHourlyCost  
+
+
 
     static constraints = {
     }
