@@ -151,8 +151,8 @@ class ProjectResourceTest extends GrailsUnitTestCase {
 		startDate.set(2010, Calendar.JUNE, 13)
 		endDate.set(2010, Calendar.JUNE, 13)
 
-        ProjectResource projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
-		assertEquals(5, projectResource.calculateBusinessDaysOnProjectForGivenMonth(startDate))
+        projectResource = buildProjectResource(resource, startDate, endDate, null , 0)
+		assertEquals(0, projectResource.calculateBusinessDaysOnProjectForGivenMonth(startDate))
 	}
 	
     Resource buildResource(String resourceName, int resourceLoadedHourlyCost){
