@@ -64,9 +64,12 @@ abstract class AbstractProjectResource {
 			return 0
 		
 		while(start.get(Calendar.MONTH) == month.get(Calendar.MONTH)){
-			if (start.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY && start.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY && start.compareTo(endDate)<=0 && start.compareTo(startDate)>=0) {
-				rval++
-			}
+            if (start.get(Calendar.DAY_OF_WEEK) != Calendar.SATURDAY && 
+                    start.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY && 
+                    start.compareTo(endDate)<=0 && 
+                    start.compareTo(startDate)>=0) {
+                        rval++
+            }
 			start.add(Calendar.DAY_OF_MONTH, 1)
 		}
 

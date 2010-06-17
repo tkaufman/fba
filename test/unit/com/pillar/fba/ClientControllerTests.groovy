@@ -11,7 +11,10 @@ class ClientControllerTests extends ControllerUnitTestCase {
         super.tearDown()
     }
 
-    void testSomething() {
+    void testList() {
+    // mock the params object	
+	    def controller = new ClientController()
+	    controller.list()
 
     }
 }
